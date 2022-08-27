@@ -17,6 +17,12 @@
           "deploymentBucketName": "amplify-awsamplify-dev-215254-deployment",
           "s3Key": "amplify-builds/awsamplify4d819912-7466523063756e666633-build.zip"
         }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3rdwxl8y2apnx",
+          "type": "manual"
+        }
       }
     }
   }
