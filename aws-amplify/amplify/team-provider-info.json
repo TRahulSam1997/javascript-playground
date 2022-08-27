@@ -10,6 +10,14 @@
       "StackName": "amplify-awsamplify-dev-215254",
       "StackId": "arn:aws:cloudformation:us-east-1:833908495380:stack/amplify-awsamplify-dev-215254/cb5c0600-25fe-11ed-90b4-1205850a37e9",
       "AmplifyAppId": "d3rdwxl8y2apnx"
+    },
+    "categories": {
+      "function": {
+        "awsamplify4d819912": {
+          "deploymentBucketName": "amplify-awsamplify-dev-215254-deployment",
+          "s3Key": "amplify-builds/awsamplify4d819912-7466523063756e666633-build.zip"
+        }
+      }
     }
   }
 }
