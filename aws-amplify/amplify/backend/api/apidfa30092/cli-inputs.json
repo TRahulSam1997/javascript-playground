@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/customers/{customerid}": {
+      "name": "/customers/{customerid}",
+      "lambdaFunction": "awsamplify4d819912",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
