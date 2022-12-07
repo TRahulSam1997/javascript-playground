@@ -1,21 +1,67 @@
 import logo from './logo.svg';
 import './App.css';
 import { Router, BrowserRouter, Route, Link, Routes, useLocation } from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
+const returnArrVal = (hash) => {
+  let arrVal = 0;
+  switch (hash) {
+    case "#basics":
+      arrVal = 0;
+      break;
+    case "#style":
+      arrVal = 1;
+      break;
+    case "#responses":
+      arrVal = 2;
+      break;
+    case "#authentication":
+      arrVal = 3;
+      break;
+    case "#installation":
+      arrVal = 4;
+      break;
+    default:
+      arrVal = 0;
+  }
+
+  return arrVal;
+}
 
 function App() {
   const location = useLocation();
   
+  const [value, setValue] = useState(null);
+
+  useEffect(() => {
+    console.log("The hash has changed:", location.hash);
+    setValue(returnArrVal(location.hash));
+  }, [location]);
+
   return (
     <div className="App">
       <header className="App-header">
           <nav>
-            <Link to="#basics">Basics</Link>
-            <Link to="#style">Style</Link>
-            <Link to="#responses">Responses</Link>
-            <Link to="#authentication">Authentication</Link>
-            <Link to="#installation">Installation</Link>
+            <Link to="#basics">
+              <h1>Basics</h1>
+              <p>Value returned is {value}</p>
+            </Link>
+            <Link to="#style">
+              <h1>Style</h1>
+              <p>Value returned is {value}</p>
+            </Link>
+            <Link to="#responses">
+              <h1>Responses</h1>
+              <p>Value returned is {value}</p>
+            </Link>
+            <Link to="#authentication">
+              <h1>Authentication</h1>
+              <p>Value returned is {value}</p>
+            </Link>
+            <Link to="#installation">
+              <h1>Installation</h1>
+              <p>Value returned is {value}</p>
+            </Link>
           </nav>
 
           {/* Without useLocation() hook 👇 */}
@@ -28,40 +74,17 @@ function App() {
           </Routes> */}
 
           {/* With useLocation() hook 👇 */}
-          {location.hash === "#basics" && <Basics loc={location}/>}
+          {/* {location.hash === "#basics" && <Basics loc={location}/>}
           {location.hash === "#style" && <Style loc={location}/>}
           {location.hash === "#responses" && <Responses loc={location}/>}
           {location.hash === "#authentication" && <Authentication loc={location}/>}
-          {location.hash === "#installation" && <Installation loc={location}/>}
+          {location.hash === "#installation" && <Installation loc={location}/>} */}
+
+
       </header>
     </div>
     
   );
-}
-
-function Basics(loc) {
-  console.log("The current URL path is: ", loc.loc.pathname);
-  console.log("The current hash path is: ", loc.loc.hash);
-}
-
-function Style(loc) {
-  console.log("The current URL path is: ", loc.loc.pathname);
-  console.log("The current hash path is: ", loc.loc.hash);
-}
-
-function Responses(loc) {
-  console.log("The current URL path is: ", loc.loc.pathname);
-  console.log("The current hash path is: ", loc.loc.hash);
-}
-
-function Authentication(loc) {
-  console.log("The current URL path is: ", loc.loc.pathname);
-  console.log("The current hash path is: ", loc.loc.hash);
-}
-
-function Installation(loc) {
-  console.log("The current URL path is: ", loc.loc.pathname);
-  console.log("The current hash path is: ", loc.loc.hash);
 }
 
 export default App;
