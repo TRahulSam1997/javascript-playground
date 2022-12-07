@@ -28,35 +28,40 @@ function App() {
           </Routes> */}
 
           {/* With useLocation() hook 👇 */}
-          {location.hash === "#basics" && <Basics />}
-          {location.hash === "#style" && <Style />}
-          {location.hash === "#responses" && <Responses />}
-          {location.hash === "#authentication" && <Authentication />}
-          {location.hash === "#installation" && <Installation />}
+          {location.hash === "#basics" && <Basics loc={location}/>}
+          {location.hash === "#style" && <Style loc={location}/>}
+          {location.hash === "#responses" && <Responses loc={location}/>}
+          {location.hash === "#authentication" && <Authentication loc={location}/>}
+          {location.hash === "#installation" && <Installation loc={location}/>}
       </header>
     </div>
     
   );
 }
 
-function Basics() {
-  return <h1>Basics</h1>;
+function Basics(loc) {
+  console.log("The current URL path is: ", loc.loc.pathname);
+  console.log("The current hash path is: ", loc.loc.hash);
 }
 
-function Style() {
-  return <h1>Style</h1>;
+function Style(loc) {
+  console.log("The current URL path is: ", loc.loc.pathname);
+  console.log("The current hash path is: ", loc.loc.hash);
 }
 
-function Responses() {
-  return <h1>Responses</h1>;
+function Responses(loc) {
+  console.log("The current URL path is: ", loc.loc.pathname);
+  console.log("The current hash path is: ", loc.loc.hash);
 }
 
-function Authentication() {
-  return <h1>Authentication</h1>;
+function Authentication(loc) {
+  console.log("The current URL path is: ", loc.loc.pathname);
+  console.log("The current hash path is: ", loc.loc.hash);
 }
 
-function Installation() {
-  return <h1>Installation</h1>;
+function Installation(loc) {
+  console.log("The current URL path is: ", loc.loc.pathname);
+  console.log("The current hash path is: ", loc.loc.hash);
 }
 
 export default App;
